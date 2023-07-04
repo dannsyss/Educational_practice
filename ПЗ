@@ -237,3 +237,8 @@ model.summary()
 
 # Train the LSTM model
 model.fit(X_train, y_train, epochs=20, verbose=0)
+
+preds = model.predict(X_test)
+
+#df_12 = df_12.read_csv('to2.csv')
+df_12 = df_12.drop('Datetime', axis = 1)
