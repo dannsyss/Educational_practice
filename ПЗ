@@ -11,3 +11,12 @@ import plotly.figure_factory as ff
 
 #Импорт набора данных
 df = pd.read_csv("powerconsumption.csv")
+
+#Просмотр верхней части данных
+df.head()
+
+#Просмотр нижней части данных
+df.tail()
+
+#Просмотр верхней и нижней части данных
+df
