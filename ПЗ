@@ -49,3 +49,7 @@ df.describe().round(2)
 #Создание нового столбца в наборе данных
 df["Month"] = df["Datetime"].dt.month
 df
+
+#Установка индекса на столбец Datetime
+df = df.set_index(df["Datetime"])
+df
