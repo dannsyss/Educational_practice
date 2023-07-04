@@ -57,3 +57,10 @@ df
 #Группировка данных по месяцам для более простого и эффективного построения трендов.
 grouped = df.groupby('Month').mean(numeric_only=True)
 grouped
+
+fig = px.line(df,
+              x="Datetime",
+              y="PowerConsumption_Zone1",
+              labels = {'Datetime':'Months of the year'},
+              title = "Общая мощность, выработанная с января по декабрь в первой зоне")
+fig.show()
