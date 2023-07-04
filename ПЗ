@@ -26,3 +26,10 @@ df.shape
 
 #Просмотр типа данных и проверка на нулевые значения
 df.info()
+
+df['Datetime'] = pd.to_datetime(df['Datetime'], format='%m/%d/%Y %H:%M').dt.strftime('%m/%d/%Y %H:%M')
+df['Datetime'] = df['Datetime'].apply(lambda x: dt.datetime.strptime(x,'%m/%d/%Y %H:%M') if type(x)==str else pd.NaT)
+
+df
+
+df.info()
