@@ -191,3 +191,6 @@ df = pd.read_csv("powerconsumption.csv")
 df['Datetime'] = pd.to_datetime(df['Datetime'], format='%m/%d/%Y %H:%M').dt.strftime('%d/%m/%Y %H:%M')
 df['Datetime'] = df['Datetime'].apply(lambda x: dt.datetime.strptime(x,'%d/%m/%Y %H:%M') if type(x)==str else pd.NaT)
 df["Month"] = df["Datetime"].dt.month
+
+df_1_to_11 = df[df['Month'].isin(range(1, 12))] # Select rows with months 1 to 11
+df_12 = df[df['Month'] == 12] # Select rows with month 12
