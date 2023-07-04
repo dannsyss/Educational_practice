@@ -141,3 +141,6 @@ fig = px.box(df,
              title="Общая статистика скорости ветра")
 
 fig.show()
+
+df_corr = df.corr()
+df_corr
