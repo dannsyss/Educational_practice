@@ -154,3 +154,8 @@ fig = ff.create_annotated_heatmap(x = x,
                                   z = z,
                                   annotation_text = np.around(z, decimals=2))
 fig.show()
+
+fig = px.scatter_polar(df,
+                       r="PowerConsumption_Zone1",
+                       theta="WindSpeed")
+fig.show()
