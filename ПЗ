@@ -242,3 +242,13 @@ preds = model.predict(X_test)
 
 #df_12 = df_12.read_csv('to2.csv')
 df_12 = df_12.drop('Datetime', axis = 1)
+
+next_24_hours_X = df_12[["Temperature", "Humidity", "WindSpeed", "GeneralDiffuseFlows", "DiffuseFlows", "PowerConsumption_Zone2", "PowerConsumption_Zone3", "Month"]].values.reshape(-1, 1, 8)
+# Make predictions using the model
+next_24_hours_preds = model.predict(next_24_hours_X)
+
+# Add the predicted values to the original dataframe
+df_12["PowerConsumption_Zone1"] = next_24_hours_preds.flatten()
+
+# Write the updated data to the same excel file
+df_12.to_csv("PredictData.csv", index=False)
