@@ -159,3 +159,9 @@ fig = px.scatter_polar(df,
                        r="PowerConsumption_Zone1",
                        theta="WindSpeed")
 fig.show()
+
+fig = px.scatter(df,
+                 x="WindSpeed",
+                 y="PowerConsumption_Zone1",
+                 title = "Power generated vs Wind Speed")
+fig.show()
