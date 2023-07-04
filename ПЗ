@@ -165,3 +165,5 @@ fig = px.scatter(df,
                  y="PowerConsumption_Zone1",
                  title = "Power generated vs Wind Speed")
 fig.show()
+
+df.plot.scatter(y='PowerConsumption_Zone1', x='WindSpeed')
