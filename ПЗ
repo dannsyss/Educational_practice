@@ -8,3 +8,6 @@ import datetime as dt
 import plotly.graph_objects as go
 import plotly.express as px
 import plotly.figure_factory as ff
+
+#Импорт набора данных
+df = pd.read_csv("powerconsumption.csv")
