@@ -33,3 +33,9 @@ df['Datetime'] = df['Datetime'].apply(lambda x: dt.datetime.strptime(x,'%m/%d/%Y
 df
 
 df.info()
+
+#Проверка на пропущенные значения
+df.isnull().sum()
+
+#Проверка на дубликаты в данных
+df.duplicated().sum()
