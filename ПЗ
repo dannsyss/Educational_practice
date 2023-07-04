@@ -208,3 +208,6 @@ from keras.layers import LSTM, Dense
 import tensorflow as tf
 
 df_1_to_11 = df_1_to_11.drop('Datetime', axis = 1)
+
+# Split the dataset into training and test sets
+train_df, test_df = train_test_split(df_1_to_11, test_size=0.2, random_state=42)
