@@ -90,3 +90,12 @@ fig = px.box(df,
 
 fig.update_traces(width=0.5)
 fig.show()
+
+fig = px.box(df,
+        x=df.index.day,
+        y="PowerConsumption_Zone1",
+        color=df.index.day,
+        labels = {"x" : "Дни"})
+
+fig.update_traces(width=0.5)
+fig.show()
