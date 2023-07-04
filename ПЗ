@@ -64,3 +64,19 @@ fig = px.line(df,
               labels = {'Datetime':'Months of the year'},
               title = "Общая мощность, выработанная с января по декабрь в первой зоне")
 fig.show()
+
+fig = px.line(df,
+              x="Datetime",
+              y="PowerConsumption_Zone1",
+              labels = {'Datetime':'Months of the year'},
+              title = "Общая мощность, выработанная с января по декабрь")
+
+fig.update_layout(
+    template='plotly',
+    font=dict(size=10),
+    title={
+        'text': "Общая мощность, выработанная с января по декабрь в первой зоне",
+        'font': {'size': 25}
+    }
+)
+fig.show()
