@@ -192,5 +192,11 @@ df['Datetime'] = pd.to_datetime(df['Datetime'], format='%m/%d/%Y %H:%M').dt.strf
 df['Datetime'] = df['Datetime'].apply(lambda x: dt.datetime.strptime(x,'%d/%m/%Y %H:%M') if type(x)==str else pd.NaT)
 df["Month"] = df["Datetime"].dt.month
 
+# Print the first 5 rows of each dataframe
+df_1_to_11.to_csv("1to11.csv", index=False)
+df_12.to_csv("to12.csv", index=False)
+print(df_1_to_11.head())
+print(df_12.head())
+
 df_1_to_11 = df[df['Month'].isin(range(1, 12))] # Select rows with months 1 to 11
 df_12 = df[df['Month'] == 12] # Select rows with month 12
