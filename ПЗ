@@ -53,3 +53,7 @@ df
 #Установка индекса на столбец Datetime
 df = df.set_index(df["Datetime"])
 df
+
+#Группировка данных по месяцам для более простого и эффективного построения трендов.
+grouped = df.groupby('Month').mean(numeric_only=True)
+grouped
