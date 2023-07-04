@@ -185,3 +185,9 @@ ax.set_ylabel('y' , fontsize = 24)
 plt.xticks(fontsize=20)
 plt.yticks(fontsize=20)
 plt.show()
+
+# Split the dataset into two dataframes
+df = pd.read_csv("powerconsumption.csv")
+df['Datetime'] = pd.to_datetime(df['Datetime'], format='%m/%d/%Y %H:%M').dt.strftime('%d/%m/%Y %H:%M')
+df['Datetime'] = df['Datetime'].apply(lambda x: dt.datetime.strptime(x,'%d/%m/%Y %H:%M') if type(x)==str else pd.NaT)
+df["Month"] = df["Datetime"].dt.month
