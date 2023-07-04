@@ -80,3 +80,13 @@ fig.update_layout(
     }
 )
 fig.show()
+
+fig = px.box(df,
+        x=df.index.month,
+        y="PowerConsumption_Zone1",
+        color=df.index.month,
+        labels = {"x" : "Месяцы"},
+        title="Выработка электроэнергии | Месячная статистика ")
+
+fig.update_traces(width=0.5)
+fig.show()
