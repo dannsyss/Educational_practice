@@ -211,3 +211,9 @@ df_1_to_11 = df_1_to_11.drop('Datetime', axis = 1)
 
 # Split the dataset into training and test sets
 train_df, test_df = train_test_split(df_1_to_11, test_size=0.2, random_state=42)
+
+# Reshape the training and test data into a 3D array for LSTM input
+X_train = train_df.drop("PowerConsumption_Zone1", axis=1).values.reshape(-1, 1, 8)
+X_test = test_df.drop("PowerConsumption_Zone1", axis=1).values.reshape(-1, 1, 8)
+y_train = train_df["PowerConsumption_Zone1"].values.reshape(-1, 1)
+y_test = test_df["PowerConsumption_Zone1"].values.reshape(-1, 1)
